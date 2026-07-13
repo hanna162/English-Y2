@@ -1,0 +1,1532 @@
+<!doctype html>
+<html lang="ms"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260712-23-f551e58"}');</script><script src="/_sdk/f432b76fb310b513.telemetry_sdk.js" integrity="sha512-9FJQ55EKmmqhyyik8BhrMVfm0+iYYfb8uOlRsjtkxJMEI97qOVEI4PnHohDjQAtvAep0IOEpdQ64eki0sz62ug=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌟 English Adventure Year 2 🌟</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+
+    .view { display: none; }
+    .view.active { display: block; }
+    .bounce { animation: bounce 0.6s ease; }
+    @keyframes bounce { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
+    .fade-in { animation: fadeIn 0.4s ease; }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+    .star-pop { animation: starPop 0.5s ease; }
+    @keyframes starPop { 0%{transform:scale(0) rotate(0)} 50%{transform:scale(1.3) rotate(180deg)} 100%{transform:scale(1) rotate(360deg)} }
+    .card-flip { perspective: 800px; }
+    .card-inner { transition: transform 0.5s; transform-style: preserve-3d; }
+    .card-flip.flipped .card-inner { transform: rotateY(180deg); }
+    .card-front, .card-back { backface-visibility: hidden; }
+    .card-back { transform: rotateY(180deg); }
+    .menu-btn { transition: all 0.2s; }
+    .menu-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+    .avatar-option { transition: all 0.2s; cursor: pointer; }
+    .avatar-option.selected { transform: scale(1.2); box-shadow: 0 0 0 4px #fbbf24; border-radius: 50%; }
+    .progress-fill { transition: width 0.5s ease; }
+  </style>
+  <script src="/_sdk/0179d719c431a79e.data_sdk.js" type="text/javascript" integrity="sha512-OsRvJkI5GkC3MJQcgotQYotpzrMSX415GiKKgvYdxQEEkzD/fdchShO2FMSy0PJr/tiINMXOk5Vl2zAgg6bUiA=="></script>
+  <script src="/_sdk/9432170dbd2ae0df.resizing_sdk.js" type="text/javascript" integrity="sha512-FeT+58sb1f9ejWPWFjCbJvTT+SDwGV+ngrHUnlO7TWEOoqwOLj6p256kO3vOL7DIWl1cIgrobiof8v2bOigwPg=="></script>
+ </head>
+ <body data-template-id="__page-root" class="min-h-screen pb-24"><!-- HOME VIEW -->
+  <div id="view-home" class="view active fade-in">
+   <header class="text-center pt-6 pb-4 px-4">
+    <h1 data-template-id="app-title" class="canva-text text-3xl md:text-4xl font-black" style="color: rgb(31, 41, 55); font-weight: 400; font-style: normal; font-size: 35px;">🌟 English Adventure Year 2 🌟</h1>
+    <p data-template-id="app-subtitle" class="canva-text mt-2 text-lg" style="color: rgb(31, 41, 55); font-weight: 400; font-style: normal; font-size: 21px;">Jom belajar Bahasa Inggeris! 🎉</p>
+   </header>
+   <div class="max-w-md mx-auto px-4">
+    <div id="setup-section" class="bg-white rounded-2xl p-5 shadow-lg mb-4"><label data-template-id="name-label" for="student-name" class="canva-text block font-bold mb-2" style="color: rgb(31, 41, 55); font-weight: 700; font-style: normal; font-size: 16px;">Nama Kamu:</label> <input id="student-name" type="text" class="w-full border-2 border-yellow-300 rounded-xl px-4 py-3 text-lg focus:outline-none focus:border-yellow-500" placeholder="Nama kamu...">
+     <p data-template-id="avatar-label" class="canva-text font-bold mt-4 mb-2" style="color: rgb(31, 41, 55); font-weight: 700; font-style: normal; font-size: 16px;">Pilih Avatar:</p>
+     <div class="flex justify-center gap-3 flex-wrap" id="avatar-grid"><span class="avatar-option text-4xl" data-avatar="🧒">🧒</span> <span class="avatar-option text-4xl" data-avatar="👧">👧</span> <span class="avatar-option text-4xl" data-avatar="🦸">🦸</span> <span class="avatar-option text-4xl" data-avatar="🧚">🧚</span> <span class="avatar-option text-4xl" data-avatar="🦊">🦊</span> <span class="avatar-option text-4xl" data-avatar="🐱">🐱</span>
+     </div><button id="start-btn" class="w-full mt-4 bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-bold text-lg py-3 rounded-xl shadow-lg menu-btn">Mula Belajar! 🚀</button>
+    </div>
+    <div id="welcome-section" class="hidden bg-white rounded-2xl p-5 shadow-lg mb-4 text-center">
+     <p class="text-4xl mb-2" id="welcome-avatar"></p>
+     <p class="text-xl font-bold" id="welcome-name"></p>
+     <p data-template-id="welcome-msg" class="canva-text mt-1" style="color: rgb(75, 85, 99); font-weight: 400; font-style: normal; font-size: 16px;">Selamat datang! Mari mula belajar! 🚀</p>
+     <div class="mt-3">
+      <p data-template-id="progress-label" class="canva-text text-sm font-bold mb-1" style="color: rgb(55, 65, 81); font-weight: 700; font-style: normal; font-size: 13px;">Kemajuan Pembelajaran:</p>
+      <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+       <div id="progress-bar" class="progress-fill h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full" style="width:0%"></div>
+      </div>
+      <p class="text-xs mt-1 text-gray-500" id="progress-text">0%</p>
+     </div>
+    </div><!-- Menu Grid -->
+    <div id="menu-section" class="hidden grid grid-cols-2 gap-3 pb-4"><button onclick="showView('view-units')" class="menu-btn bg-gradient-to-br from-sky-400 to-cyan-500 text-white rounded-2xl p-4 text-center shadow-lg col-span-2"> <span class="text-3xl block mb-1">📚</span><span class="font-bold text-sm">Learn</span> </button> <button onclick="showView('view-speaking')" class="menu-btn bg-gradient-to-br from-pink-500 to-pink-700 text-white rounded-2xl p-4 text-center shadow-lg"> <span class="text-3xl block mb-1">🗣</span><span class="font-bold text-sm">Speaking</span> </button> <button onclick="showView('view-listening')" class="menu-btn bg-gradient-to-br from-purple-600 to-purple-800 text-white rounded-2xl p-4 text-center shadow-lg"> <span class="text-3xl block mb-1">🎧</span><span class="font-bold text-sm">Listening</span> </button> <button onclick="showView('view-reading')" class="menu-btn bg-gradient-to-br from-green-500 to-green-700 text-white rounded-2xl p-4 text-center shadow-lg"> <span class="text-3xl block mb-1">📖</span><span class="font-bold text-sm">Reading</span> </button> <button onclick="showView('view-writing')" class="menu-btn bg-gradient-to-br from-orange-500 to-orange-700 text-white rounded-2xl p-4 text-center shadow-lg"> <span class="text-3xl block mb-1">✍</span><span class="font-bold text-sm">Writing</span> </button> <button onclick="showView('view-games')" class="menu-btn bg-gradient-to-br from-red-500 to-red-700 text-white rounded-2xl p-4 text-center shadow-lg"> <span class="text-3xl block mb-1">🎮</span><span class="font-bold text-sm">Games</span> </button> <button onclick="showView('view-vocabulary')" class="menu-btn bg-gradient-to-br from-violet-400 to-indigo-500 text-white rounded-2xl p-4 text-center shadow-lg"> <span class="text-3xl block mb-1">📚</span><span class="font-bold text-sm">Vocabulary</span> </button> <button onclick="showView('view-exam')" class="menu-btn bg-gradient-to-br from-indigo-600 to-purple-800 text-white rounded-2xl p-4 text-center shadow-lg col-span-2"> <span class="text-3xl block mb-1">📝</span><span class="font-bold text-sm">Examination</span> </button>
+    </div>
+   </div>
+  </div><!-- PHONICS VIEW -->
+  <div id="view-phonics" class="view fade-in">
+   <nav class="flex items-center justify-between p-4 bg-white shadow"><button onclick="showView('view-home')" class="text-2xl">⬅️</button>
+    <h2 data-template-id="phonics-title" class="canva-text font-bold text-xl" style="color: rgb(124, 58, 237); font-weight: 700; font-style: normal; font-size: 24px;">🔤 Phonics Guide</h2><span></span>
+   </nav>
+   <div class="max-w-lg mx-auto p-4">
+    <div class="bg-white rounded-2xl p-5 shadow-lg">
+     <h3 class="font-bold text-lg mb-4">🔤 English Phonics Guide</h3>
+     <div class="space-y-4" id="phonics-content"></div>
+    </div>
+   </div>
+  </div><!-- UNITS VIEW -->
+  <div id="view-units" class="view fade-in">
+   <nav class="flex items-center justify-between p-4 bg-white shadow"><button onclick="showView('view-home')" class="text-2xl">🏠</button>
+    <h2 data-template-id="units-title" class="canva-text font-bold text-xl" style="color: rgb(30, 58, 95); font-weight: 700; font-style: normal; font-size: 24px;">📚 Pilih Unit</h2><span></span>
+   </nav>
+   <div class="max-w-lg mx-auto p-4 grid gap-3"><button onclick="loadUnit(5)" class="menu-btn bg-gradient-to-r from-sky-400 to-cyan-500 text-white rounded-2xl p-4 text-left shadow-lg flex items-center gap-3"> <span class="text-3xl">⚽</span>
+     <div>
+      <p class="font-bold">Unit 5: Free Time</p>
+      <p class="text-xs opacity-80">Days &amp; Hobbies</p>
+     </div></button> <button onclick="loadUnit(6)" class="menu-btn bg-gradient-to-r from-amber-400 to-yellow-500 text-white rounded-2xl p-4 text-left shadow-lg flex items-center gap-3"> <span class="text-3xl">🏠</span>
+     <div>
+      <p class="font-bold">Unit 6: The Old House</p>
+      <p class="text-xs opacity-80">Rooms &amp; Furniture</p>
+     </div></button> <button onclick="loadUnit(7)" class="menu-btn bg-gradient-to-r from-pink-400 to-rose-500 text-white rounded-2xl p-4 text-left shadow-lg flex items-center gap-3"> <span class="text-3xl">👗</span>
+     <div>
+      <p class="font-bold">Unit 7: Get Dressed!</p>
+      <p class="text-xs opacity-80">Clothes</p>
+     </div></button> <button onclick="loadUnit(8)" class="menu-btn bg-gradient-to-r from-indigo-400 to-violet-500 text-white rounded-2xl p-4 text-left shadow-lg flex items-center gap-3"> <span class="text-3xl">🤖</span>
+     <div>
+      <p class="font-bold">Unit 8: The Robot</p>
+      <p class="text-xs opacity-80">Body Parts &amp; Abilities</p>
+     </div></button> <button onclick="loadUnit(9)" class="menu-btn bg-gradient-to-r from-teal-400 to-emerald-500 text-white rounded-2xl p-4 text-left shadow-lg flex items-center gap-3"> <span class="text-3xl">🏖</span>
+     <div>
+      <p class="font-bold">Unit 9: At The Beach</p>
+      <p class="text-xs opacity-80">Beach Activities</p>
+     </div></button> <button onclick="showView('view-phonics')" class="menu-btn bg-gradient-to-r from-purple-400 to-purple-600 text-white rounded-2xl p-4 text-left shadow-lg flex items-center gap-3 col-span-2"> <span class="text-3xl">🔤</span>
+     <div>
+      <p class="font-bold">Phonics Guide</p>
+      <p class="text-xs opacity-80">English Sound Patterns</p>
+     </div></button>
+   </div>
+  </div><!-- UNIT DETAIL VIEW -->
+  <div id="view-unit-detail" class="view fade-in">
+   <nav class="flex items-center justify-between p-4 bg-white shadow"><button onclick="showView('view-units')" class="text-2xl">⬅️</button>
+    <h2 class="font-bold text-lg" id="unit-detail-title"></h2><button onclick="showView('view-home')" class="text-2xl">🏠</button>
+   </nav>
+   <div class="max-w-lg mx-auto p-4" id="unit-content"></div>
+  </div><!-- LISTENING VIEW -->
+  <div id="view-listening" class="view fade-in">
+   <nav class="flex items-center justify-between p-4 bg-white shadow"><button onclick="showView('view-home')" class="text-2xl">⬅️</button>
+    <h2 data-template-id="listening-title" class="canva-text font-bold text-xl" style="color: rgb(107, 33, 168); font-weight: 700; font-style: normal; font-size: 24px;">🎧 Listening</h2><span></span>
+   </nav>
+   <div class="max-w-lg mx-auto p-4">
+    <div class="bg-white rounded-2xl p-5 shadow-lg mb-4">
+     <h3 class="font-bold text-lg mb-3">🎧 Dengar dan Pilih (Listen &amp; Choose)</h3>
+     <div id="listening-activity" class="space-y-3"></div>
+    </div>
+    <div class="bg-white rounded-2xl p-5 shadow-lg">
+     <h3 class="font-bold text-lg mb-3">📣 Classroom Instructions</h3>
+     <div class="grid grid-cols-2 gap-2" id="instructions-grid"></div>
+    </div>
+   </div>
+  </div><!-- SPEAKING VIEW -->
+  <div id="view-speaking" class="view fade-in">
+   <nav class="flex items-center justify-between p-4 bg-white shadow"><button onclick="showView('view-home')" class="text-2xl">⬅️</button>
+    <h2 data-template-id="speaking-title" class="canva-text font-bold text-xl" style="color: rgb(190, 24, 93); font-weight: 700; font-style: normal; font-size: 24px;">🗣 Speaking</h2><span></span>
+   </nav>
+   <div class="max-w-lg mx-auto p-4">
+    <div class="bg-white rounded-2xl p-5 shadow-lg space-y-4" id="speaking-cards"></div>
+   </div>
+  </div><!-- READING VIEW -->
+  <div id="view-reading" class="view fade-in">
+   <nav class="flex items-center justify-between p-4 bg-white shadow"><button onclick="showView('view-home')" class="text-2xl">⬅️</button>
+    <h2 data-template-id="reading-title" class="canva-text font-bold text-xl" style="color: rgb(22, 101, 52); font-weight: 700; font-style: normal; font-size: 24px;">📖 Reading</h2><span></span>
+   </nav>
+   <div class="max-w-lg mx-auto p-4" id="reading-content"></div>
+  </div><!-- WRITING VIEW -->
+  <div id="view-writing" class="view fade-in">
+   <nav class="flex items-center justify-between p-4 bg-white shadow"><button onclick="showView('view-home')" class="text-2xl">⬅️</button>
+    <h2 data-template-id="writing-title" class="canva-text font-bold text-xl" style="color: rgb(194, 65, 12); font-weight: 700; font-style: normal; font-size: 24px;">✍ Writing</h2><span></span>
+   </nav>
+   <div class="max-w-lg mx-auto p-4" id="writing-content"></div>
+  </div><!-- GAMES VIEW -->
+  <div id="view-games" class="view fade-in">
+   <nav class="flex items-center justify-between p-4 bg-white shadow"><button onclick="showView('view-home')" class="text-2xl">⬅️</button>
+    <h2 data-template-id="games-title" class="canva-text font-bold text-xl" style="color: rgb(220, 38, 38); font-weight: 700; font-style: normal; font-size: 24px;">🎮 Games</h2><span></span>
+   </nav>
+   <div class="max-w-lg mx-auto p-4 grid gap-3"><button onclick="startGame('matching')" class="menu-btn bg-gradient-to-r from-fuchsia-400 to-pink-500 text-white rounded-2xl p-4 shadow-lg flex items-center gap-3"> <span class="text-3xl">🔗</span><span class="font-bold">Word Matching</span> </button> <button onclick="startGame('memory')" class="menu-btn bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-2xl p-4 shadow-lg flex items-center gap-3"> <span class="text-3xl">🃏</span><span class="font-bold">Memory Cards</span> </button> <button onclick="startGame('spelling')" class="menu-btn bg-gradient-to-r from-lime-400 to-green-500 text-white rounded-2xl p-4 shadow-lg flex items-center gap-3"> <span class="text-3xl">✏️</span><span class="font-bold">Spelling Game</span> </button> <button onclick="startGame('quiz')" class="menu-btn bg-gradient-to-r from-orange-400 to-red-500 text-white rounded-2xl p-4 shadow-lg flex items-center gap-3"> <span class="text-3xl">❓</span><span class="font-bold">Quiz Challenge</span> </button>
+   </div>
+   <div class="max-w-lg mx-auto p-4" id="game-area"></div>
+  </div><!-- VOCABULARY VIEW -->
+  <div id="view-vocabulary" class="view fade-in">
+   <nav class="flex items-center justify-between p-4 bg-white shadow"><button onclick="showView('view-home')" class="text-2xl">⬅️</button>
+    <h2 data-template-id="vocabulary-title" class="canva-text font-bold text-xl" style="color: rgb(99, 102, 241); font-weight: 700; font-style: normal; font-size: 24px;">📚 Vocabulary Builder</h2><span></span>
+   </nav>
+   <div class="max-w-lg mx-auto p-4">
+    <div class="bg-white rounded-2xl p-5 shadow-lg">
+     <div class="mb-4"><label for="vocab-unit-filter" class="block font-bold text-sm mb-2">Filter by Unit:</label> <select id="vocab-unit-filter" class="w-full border-2 border-blue-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500"> <option value="all">All Units</option> <option value="5">Unit 5: Free Time</option> <option value="6">Unit 6: The Old House</option> <option value="7">Unit 7: Get Dressed!</option> <option value="8">Unit 8: The Robot</option> <option value="9">Unit 9: At The Beach</option> </select>
+     </div>
+     <div class="grid grid-cols-2 gap-3" id="vocabulary-grid"></div>
+    </div>
+   </div>
+  </div><!-- EXAMINATION PAPER VIEW -->
+  <div id="view-exam" class="view fade-in">
+   <nav class="flex items-center justify-between p-4 bg-white shadow"><button onclick="showView('view-home')" class="text-2xl">⬅️</button>
+    <h2 data-template-id="exam-title" class="canva-text font-bold text-xl" style="color: rgb(67, 56, 202); font-weight: 700; font-style: normal; font-size: 24px;">📝 Examination Paper - SET 1</h2><span></span>
+   </nav>
+   <div class="max-w-lg mx-auto p-4 pb-24">
+    <div id="exam-container"></div>
+   </div>
+  </div><!-- ACHIEVEMENTS VIEW -->
+  <div id="view-achievements" class="view fade-in">
+   <nav class="flex items-center justify-between p-4 bg-white shadow"><button onclick="showView('view-home')" class="text-2xl">⬅️</button>
+    <h2 data-template-id="achievements-title" class="canva-text font-bold text-xl" style="color: rgb(161, 98, 7); font-weight: 700; font-style: normal; font-size: 24px;">🏆 Achievements</h2><span></span>
+   </nav>
+   <div class="max-w-lg mx-auto p-4">
+    <div class="text-center mb-4">
+     <p class="text-5xl" id="achieve-avatar"></p>
+     <p class="font-bold text-lg" id="achieve-name"></p>
+     <p class="text-yellow-500 font-bold text-2xl">⭐ <span id="total-stars">0</span> Stars</p>
+    </div>
+    <div class="grid grid-cols-2 gap-3" id="badges-grid"></div>
+   </div>
+  </div><!-- SETTINGS VIEW -->
+  <div id="view-settings" class="view fade-in pb-24">
+   <nav class="flex items-center justify-between p-4 bg-white shadow"><button onclick="showView('view-home')" class="text-2xl">⬅️</button>
+    <h2 data-template-id="settings-title" class="canva-text font-bold text-xl" style="color: rgb(75, 85, 99); font-weight: 700; font-style: normal; font-size: 24px;">⚙️ Settings</h2><span></span>
+   </nav>
+   <div class="max-w-lg mx-auto p-4 space-y-4">
+    <div class="bg-white rounded-2xl p-5 shadow-lg">
+     <h3 class="font-bold text-lg mb-3">👤 Student Info</h3>
+     <p class="text-4xl text-center mb-2" id="settings-avatar"></p>
+     <p class="text-center text-lg font-bold" id="settings-name"></p><button onclick="resetStudent()" class="w-full mt-4 bg-red-500 text-white px-4 py-2 rounded-xl font-bold hover:bg-red-600 transition">Reset Student</button>
+    </div>
+    <div class="bg-white rounded-2xl p-5 shadow-lg">
+     <h3 class="font-bold text-lg mb-3">📊 Statistics</h3>
+     <div class="space-y-2">
+      <p class="flex justify-between"><span>Units Completed:</span><span class="font-bold" id="stats-units">0</span></p>
+      <p class="flex justify-between"><span>Total Stars:</span><span class="font-bold text-yellow-500" id="stats-stars">0</span></p>
+      <p class="flex justify-between"><span>Progress:</span><span class="font-bold" id="stats-progress">0%</span></p>
+     </div>
+    </div>
+    <div class="bg-white rounded-2xl p-5 shadow-lg">
+     <h3 class="font-bold text-lg mb-3">💾 Data</h3><button onclick="exportData()" class="w-full bg-blue-500 text-white px-4 py-2 rounded-xl font-bold hover:bg-blue-600 transition mb-2">Export Data</button> <button onclick="clearData()" class="w-full bg-orange-500 text-white px-4 py-2 rounded-xl font-bold hover:bg-orange-600 transition">Clear All Data</button>
+    </div>
+   </div>
+  </div><!-- Fixed Footer -->
+  <footer class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 shadow-lg" style="z-index:100;">
+   <div class="flex justify-around items-center h-16 max-w-full"><button onclick="showView('view-home')" class="flex flex-col items-center justify-center w-full h-full hover:bg-blue-50 transition"><span class="text-2xl">🏠</span><span class="text-xs font-bold mt-1">Home</span></button> <button onclick="showView('view-achievements')" class="flex flex-col items-center justify-center w-full h-full hover:bg-yellow-50 transition"><span class="text-2xl">🏆</span><span class="text-xs font-bold mt-1">Achievements</span></button> <button onclick="showView('view-settings')" class="flex flex-col items-center justify-center w-full h-full hover:bg-gray-50 transition"><span class="text-2xl">⚙️</span><span class="text-xs font-bold mt-1">Settings</span></button>
+   </div>
+  </footer>
+  <script src="/_sdk/719055fef2a85d14.editing_sdk.js" integrity="sha512-kFqrdGgIiTOsu307feB5Cy3JVP9IayftsmCIZ0csxYBGuBmJQPhyvcnmKR8F0fTW97h5s1gAvz3SumI8zJ6OxQ=="></script>
+  <script>
+const UNITS = {
+  5: {
+    title: "Unit 5: Free Time", emoji: "⚽",
+    vocab: [
+      {word:"Monday",emoji:"📅"},{word:"Tuesday",emoji:"📅"},{word:"Wednesday",emoji:"📅"},
+      {word:"Thursday",emoji:"📅"},{word:"Friday",emoji:"📅"},{word:"Saturday",emoji:"🎉"},
+      {word:"Sunday",emoji:"☀️"},{word:"play football",emoji:"⚽"},{word:"ride a bike",emoji:"🚲"},
+      {word:"watch TV",emoji:"📺"},{word:"read books",emoji:"📚"},{word:"draw pictures",emoji:"🎨"},
+      {word:"play games",emoji:"🎮"},{word:"listen to music",emoji:"🎵"},{word:"fly a kite",emoji:"🪁"},
+      {word:"skip rope",emoji:"🤸"}
+    ],
+    grammar: [
+      {sentence:"On Monday, I play football.", highlight:"On Monday"},
+      {sentence:"On Saturday, I watch TV.", highlight:"On Saturday"},
+      {sentence:"On Sunday, I read books.", highlight:"On Sunday"},
+      {sentence:"Do you watch TV on Fridays?", highlight:"Do you"}
+    ],
+    notes: [
+      "📅 Days of the Week: Monday (Isnin), Tuesday (Selasa), Wednesday (Rabu), Thursday (Khamis), Friday (Jumaat), Saturday (Sabtu), Sunday (Ahad)",
+      "🎉 Saturday & Sunday = Weekend (Hujung minggu)",
+      "✍️ Formula: On + [Day], + I + [Activity]. Contoh: On Monday, I play football.",
+      "⚠️ Huruf pertama nama hari mesti besar (Capital Letter) - Monday, Tuesday, Wednesday, dll.",
+      "❓ Bertanya: Do you + [Activity] + on + [Day]? → Jawab: Yes, I do. / No, I don't.",
+      "🔤 Soalan: Do you ride a bike on Saturday? → Jawab: Yes, I do. / No, I don't.",
+      "🎵 Activities: play football, ride a bike, watch TV, read books, draw pictures, play games, listen to music, fly a kite, skip rope"
+    ],
+    quiz: [
+      {q:"What day comes after Monday?",opts:["Tuesday","Wednesday","Sunday"],ans:0},
+      {q:"Complete: On ___, I play football.",opts:["Monday","table","blue"],ans:0},
+      {q:"Which is a hobby?",opts:["chair","read books","kitchen"],ans:1},
+      {q:"'ride a bike' means...",opts:["naik basikal","main bola","tengok TV"],ans:0},
+      {q:"How many days in a week?",opts:["5","6","7"],ans:2},
+      {q:"What day comes before Saturday?",opts:["Friday","Sunday","Thursday"],ans:0},
+      {q:"'draw pictures' means...",opts:["lukis gambar","baca buku","dengar muzik"],ans:0},
+      {q:"On Sunday, Ali ___ books.",opts:["reads","eats","runs"],ans:0},
+      {q:"Which is NOT a day?",opts:["Football","Monday","Friday"],ans:0},
+      {q:"'listen to music' means...",opts:["dengar muzik","main bola","naik basikal"],ans:0}
+    ]
+  },
+  6: {
+    title: "Unit 6: The Old House", emoji: "🏠",
+    vocab: [
+      {word:"kitchen",emoji:"🍳"},{word:"bedroom",emoji:"🛏"},{word:"living room",emoji:"🛋"},
+      {word:"bathroom",emoji:"🚿"},{word:"garden",emoji:"🌻"},{word:"table",emoji:"🪑"},
+      {word:"chair",emoji:"💺"},{word:"bed",emoji:"🛏"},{word:"sofa",emoji:"🛋"},
+      {word:"lamp",emoji:"💡"},{word:"cupboard",emoji:"🗄"},{word:"in",emoji:"📦"},
+      {word:"on",emoji:"⬆️"},{word:"under",emoji:"⬇️"},{word:"behind",emoji:"🔙"},{word:"next to",emoji:"➡️"}
+    ],
+    grammar: [
+      {sentence:"The book is on the table.", highlight:"on"},
+      {sentence:"The cat is under the chair.", highlight:"under"},
+      {sentence:"The toy is in the box.", highlight:"in"},
+      {sentence:"Is there a sofa in the living room?", highlight:"Is there"}
+    ],
+    notes: [
+      "🏠 Rooms in a House: Bedroom (Bilik tidur), Living room (Ruang tamu), Kitchen (Dapur), Bathroom (Bilik mandi), Dining room (Bilik makan), Cellar (Bilik bawah tanah)",
+      "🔵 Prepositions of Place: in (di dalam), on (di atas), under (di bawah), behind (di belakang), next to (sebelah)",
+      "✍️ Formula: The [object] is + [preposition] + the [location]. Contoh: The cat is under the chair.",
+      "❓ Soalan (Singular): Is there a [benda]? → Jawab: Yes, there is. / No, there isn't.",
+      "❓ Soalan (Plural): Are there any [benda]? → Jawab: Yes, there are. / No, there aren't.",
+      "📚 Example: Are there any books on the desk? → Yes, there are.",
+      "🔤 Furniture Vocabulary: table (meja), chair (kerusi), bed (katil), sofa (sofa), lamp (lampu), cupboard (almari)"
+    ],
+    quiz: [
+      {q:"Where do you cook?",opts:["kitchen","bedroom","garden"],ans:0},
+      {q:"The cat is ___ the chair.",opts:["on","under","in"],ans:1},
+      {q:"A sofa is in the...",opts:["living room","bathroom","kitchen"],ans:0},
+      {q:"'lamp' in Malay is...",opts:["lampu","meja","kerusi"],ans:0},
+      {q:"The toy is ___ the box.",opts:["in","on","at"],ans:0},
+      {q:"Where do you sleep?",opts:["bedroom","kitchen","garden"],ans:0},
+      {q:"'cupboard' in Malay is...",opts:["almari","meja","katil"],ans:0},
+      {q:"The ball is ___ the table.",opts:["under","fly","eat"],ans:0},
+      {q:"You wash in the...",opts:["bathroom","bedroom","garden"],ans:0},
+      {q:"The flowers are in the...",opts:["garden","kitchen","bathroom"],ans:0}
+    ]
+  },
+  7: {
+    title: "Unit 7: Get Dressed!", emoji: "👗",
+    vocab: [
+      {word:"jacket",emoji:"🧥"},{word:"shorts",emoji:"🩳"},{word:"skirt",emoji:"👗"},
+      {word:"shirt",emoji:"👔"},{word:"trousers",emoji:"👖"},{word:"shoes",emoji:"👟"},
+      {word:"socks",emoji:"🧦"},{word:"hat",emoji:"🎩"},{word:"dress",emoji:"👗"},
+      {word:"T-shirt",emoji:"👕"}
+    ],
+    grammar: [
+      {sentence:"I am wearing a blue shirt.", highlight:"wearing"},
+      {sentence:"She is wearing a skirt.", highlight:"wearing"},
+      {sentence:"Put on your jacket.", highlight:"Put on"},
+      {sentence:"He is wearing a leather jacket.", highlight:"leather"}
+    ],
+    notes: [
+      "👕 Clothes: jacket (jaket), shorts (seluar pendek), skirt (skirt), shirt (baju), trousers (seluar panjang), shoes (kasut), socks (stoking), hat (topi), dress (gaun), T-shirt (baju T)",
+      "🧵 Materials: Wool (bulu kambing - kain tebal), Cotton (kapas - kain lembut), Leather (kulit - kain keras)",
+      "✍️ Formula: [Person] + is wearing + [Colour/Material] + [Clothes]. Contoh: I'm wearing a blue cotton T-shirt.",
+      "👨 Examples: He's wearing a black leather jacket. / She's wearing a red skirt.",
+      "🎯 Put on = Pakai. Take off = Tanggal. Example: Put on your jacket. / Take off your shoes.",
+      "📚 Colours: blue (biru), red (merah), black (hitam), white (putih), yellow (kuning), green (hijau)",
+      "⚠️ Remember: Adjectives come BEFORE nouns - 'blue shirt' not 'shirt blue'"
+    ],
+    quiz: [
+      {q:"You wear this on your head.",opts:["hat","shoes","shirt"],ans:0},
+      {q:"'Put on your jacket' means...",opts:["Pakai jaket","Buka jaket","Cuci jaket"],ans:0},
+      {q:"I am ___ a blue shirt.",opts:["wearing","eating","reading"],ans:0},
+      {q:"Which goes on your feet?",opts:["socks","hat","jacket"],ans:0},
+      {q:"'Take off' means...",opts:["tanggal","pakai","beli"],ans:0},
+      {q:"A girl wears a ___.",opts:["skirt","hammer","book"],ans:0},
+      {q:"You wear ___ under your shoes.",opts:["socks","hat","shirt"],ans:0},
+      {q:"'trousers' in Malay...",opts:["seluar panjang","baju","topi"],ans:0},
+      {q:"She is wearing a red ___.",opts:["dress","table","lamp"],ans:0},
+      {q:"It is cold. Put on your ___.",opts:["jacket","shorts","sandals"],ans:0}
+    ]
+  },
+  8: {
+    title: "Unit 8: The Robot", emoji: "🤖",
+    vocab: [
+      {word:"head",emoji:"🗣"},{word:"arm",emoji:"💪"},{word:"hand",emoji:"✋"},
+      {word:"leg",emoji:"🦵"},{word:"foot",emoji:"🦶"},{word:"eyes",emoji:"👀"},
+      {word:"ears",emoji:"👂"},{word:"nose",emoji:"👃"},{word:"mouth",emoji:"👄"},
+      {word:"run",emoji:"🏃"},{word:"jump",emoji:"🤸"},{word:"fly",emoji:"🕊"}
+    ],
+    grammar: [
+      {sentence:"I can run.", highlight:"can"},
+      {sentence:"I can jump.", highlight:"can"},
+      {sentence:"I can't fly.", highlight:"can't"},
+      {sentence:"Can you swim? Yes, I can.", highlight:"Can"}
+    ],
+    notes: [
+      "💪 Parts of the Body: head (kepala), arm (lengan), hand (tangan), leg (kaki panjang), foot/feet (kaki), eyes (mata), ears (telinga), nose (hidung), mouth (mulut)",
+      "⚠️ Important: Foot (singular - satu kaki) vs Feet (plural - dua kaki). Example: I have two feet.",
+      "✍️ Ability - Can = Boleh melakukan. Can't (Cannot) = Tidak boleh melakukan.",
+      "📚 Examples: I can run fast. (Saya boleh berlari laju.) / A robot can't swim in the sea. (Robot tidak boleh berenang di laut.)",
+      "❓ Asking Ability: Can you + [Activity]? → Jawab: Yes, I can. / No, I can't.",
+      "🎯 Example: Can you play the piano? → Yes, I can. / No, I can't.",
+      "🔤 Actions: run (lari), jump (lompat), fly (terbang), swim (berenang), walk (jalan), dance (tari)"
+    ],
+    quiz: [
+      {q:"You see with your...",opts:["eyes","ears","hands"],ans:0},
+      {q:"I ___ run fast!",opts:["can","can't","is"],ans:0},
+      {q:"Birds can ___.",opts:["fly","cook","read"],ans:0},
+      {q:"How many arms do you have?",opts:["2","4","1"],ans:0},
+      {q:"I can't ___.",opts:["fly","run","jump"],ans:0},
+      {q:"You hear with your...",opts:["ears","eyes","nose"],ans:0},
+      {q:"You smell with your...",opts:["nose","mouth","hand"],ans:0},
+      {q:"How many legs do you have?",opts:["2","4","6"],ans:0},
+      {q:"'jump' in Malay...",opts:["lompat","lari","terbang"],ans:0},
+      {q:"Can a fish fly?",opts:["No, it can't","Yes, it can","Maybe"],ans:0}
+    ]
+  },
+  9: {
+    title: "Unit 9: At The Beach", emoji: "🏖",
+    vocab: [
+      {word:"swim",emoji:"🏊"},{word:"build a sandcastle",emoji:"🏰"},
+      {word:"catch a fish",emoji:"🎣"},{word:"play volleyball",emoji:"🏐"},
+      {word:"fish",emoji:"🐟"},{word:"crab",emoji:"🦀"},{word:"turtle",emoji:"🐢"},
+      {word:"dolphin",emoji:"🐬"},{word:"starfish",emoji:"⭐"},{word:"shell",emoji:"🐚"},
+      {word:"wave",emoji:"🌊"},{word:"sand",emoji:"🏖"}
+    ],
+    grammar: [
+      {sentence:"I can swim.", highlight:"can"},
+      {sentence:"I like playing on the beach.", highlight:"like playing"},
+      {sentence:"Let's make a sandcastle!", highlight:"Let's"}
+    ],
+    notes: [
+      "🏖️ Beach Activities: make a sandcastle (buat istana pasir), catch a fish (tangkap ikan), play volleyball (main bola), read a book (baca buku), swim in the sea (berenang di laut)",
+      "🐠 Sea Creatures: fish (ikan), crab (ketam), turtle (penyu), dolphin (lumba-lumba), starfish (bintang laut), shell (cangkang)",
+      "🔵 Using 'Let's...': Mari kita + [Action] untuk mengajak rakan bermain bersama. Contoh: Let's make a sandcastle! / Let's catch a fish!",
+      "📚 Examples: Let's read under the umbrella. / Let's swim in the sea.",
+      "🌊 Beach Vocabulary: wave (ombak), sand (pasir), ocean (lautan), beach (pantai), umbrella (payung), sand bucket (baldi pasir)",
+      "✍️ Using 'I like + -ing': I like swimming. / I like building sandcastles.",
+      "⚠️ Remember: -ing form - swim → swimming, run → running, play → playing"
+    ],
+    quiz: [
+      {q:"A 🦀 is a...",opts:["crab","fish","turtle"],ans:0},
+      {q:"You build a ___ at the beach.",opts:["sandcastle","house","car"],ans:0},
+      {q:"I ___ swim.",opts:["can","is","are"],ans:0},
+      {q:"Which animal has a shell?",opts:["turtle","dolphin","fish"],ans:0},
+      {q:"'starfish' in Malay...",opts:["bintang laut","ikan","ketam"],ans:0},
+      {q:"A 🐬 is a...",opts:["dolphin","crab","starfish"],ans:0},
+      {q:"You catch a ___ with a rod.",opts:["fish","crab","shell"],ans:0},
+      {q:"'wave' in Malay...",opts:["ombak","pasir","batu"],ans:0},
+      {q:"There are many ___ on the beach.",opts:["shells","books","chairs"],ans:0},
+      {q:"I like ___ volleyball.",opts:["playing","eating","sleeping"],ans:0}
+    ]
+  }
+};
+
+let state = JSON.parse(localStorage.getItem('ea2_state') || '{}');
+if (!state.name) state = {name:'',avatar:'🧒',stars:0,completed:[],badges:[]};
+function saveState() { localStorage.setItem('ea2_state', JSON.stringify(state)); }
+
+function showView(id) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function initPhonics() {
+  const phonics = [
+    {sound:'/sh/',guide:'Seperti bunyi "sy" (cth: syabas)',examples:'ship, shop, fish, wash, shoes, shirt',words:['ship','shop','fish','wash','shoes','shirt']},
+    {sound:'/ch/',guide:'Seperti bunyi "c" (cth: cawan)',examples:'chin, chip, lunch, beach, chair, church',words:['chin','chip','lunch','beach','chair','church']},
+    {sound:'/th/',guide:'Letak lidah di antara gigi (cth: tiga)',examples:'thin, thick, three, bath, tooth, thank',words:['thin','thick','three','bath','tooth','thank']},
+    {sound:'/ee/',guide:'Bunyi "i" panjang (cth: "ee" panjang)',examples:'bee, seed, feet, green, see, tree',words:['bee','seed','feet','green','see','tree']},
+    {sound:'/oo/',guide:'Bunyi "u" pendek/panjang (cth: "oo")',examples:'book, foot (pendek) / moon, food, cool (panjang)',words:['book','foot','moon','food','cool']},
+    {sound:'/ou/',guide:'Bunyi "au" (cth: pulau)',examples:'house, mouth, out, loud, cloud, round',words:['house','mouth','out','loud','cloud','round']}
+  ];
+  const container = document.getElementById('phonics-content');
+  container.innerHTML = '';
+  phonics.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'border-2 border-purple-200 rounded-lg p-4';
+    card.innerHTML = `
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-2xl font-bold text-purple-600">${p.sound}</span>
+        <button onclick="speakPhonic('${p.sound.slice(1,-1)}')" class="bg-purple-500 hover:bg-purple-600 text-white px-2 py-1 rounded text-sm font-bold transition">🔊 Dengar</button>
+        <span class="text-sm text-gray-600">Panduan: ${p.guide}</span>
+      </div>
+      <p class="text-sm mb-3"><span class="font-bold">Contoh perkataan:</span> ${p.examples}</p>
+      <div class="flex flex-wrap gap-2">`;
+    p.words.forEach(w => {
+      card.innerHTML += `<button onclick="speak('${w}')" class="bg-blue-100 hover:bg-blue-200 text-blue-700 px-2 py-1 rounded text-xs font-bold transition">🔊 ${w}</button>`;
+    });
+    card.innerHTML += '</div>';
+    container.appendChild(card);
+  });
+}
+
+function speakPhonic(soundName) {
+  const phonicSounds = {
+    'sh': 'sh like in shop',
+    'ch': 'ch like in chair',
+    'th': 'th like in three',
+    'ee': 'ee like in bee',
+    'oo': 'oo like in moon',
+    'ou': 'ou like in house'
+  };
+  if ('speechSynthesis' in window) {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(phonicSounds[soundName] || soundName);
+    u.lang = 'en-US';
+    u.rate = 0.7;
+    u.pitch = 1;
+    u.volume = 1;
+    speechSynthesis.speak(u);
+  }
+}
+
+function initHome() {
+  if (state.name) {
+    document.getElementById('setup-section').classList.add('hidden');
+    document.getElementById('welcome-section').classList.remove('hidden');
+    document.getElementById('menu-section').classList.remove('hidden');
+    document.getElementById('welcome-avatar').textContent = state.avatar;
+    document.getElementById('welcome-name').textContent = `Hi, ${state.name}!`;
+    updateProgress();
+  }
+}
+
+function updateProgress() {
+  const pct = Math.min(100, Math.round((state.completed.length / 5) * 100));
+  document.getElementById('progress-bar').style.width = pct + '%';
+  document.getElementById('progress-text').textContent = pct + '%';
+}
+
+document.getElementById('avatar-grid').addEventListener('click', e => {
+  const av = e.target.closest('[data-avatar]');
+  if (!av) return;
+  document.querySelectorAll('.avatar-option').forEach(a => a.classList.remove('selected'));
+  av.classList.add('selected');
+  state.avatar = av.dataset.avatar;
+});
+
+document.getElementById('start-btn').addEventListener('click', () => {
+  const name = document.getElementById('student-name').value.trim();
+  if (!name) { document.getElementById('student-name').focus(); return; }
+  state.name = name;
+  saveState();
+  initHome();
+});
+
+function loadUnit(num) {
+  const unit = UNITS[num];
+  document.getElementById('unit-detail-title').textContent = unit.title;
+  const container = document.getElementById('unit-content');
+  container.innerHTML = '';
+  
+  // Main content structure: Notes first (primary), then vocab & grammar (secondary)
+  let html = `<div class="mb-6">`;
+  
+  // NOTES SECTION - PROMINENT
+  if (unit.notes && unit.notes.length > 0) {
+    html += `<div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-5 shadow-lg border-2 border-purple-200 mb-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2"><span class="text-2xl">📚</span><span>Key Learning Points</span></h3>
+      <div class="space-y-3">`;
+    unit.notes.forEach(n => {
+      const boldNote = n
+        .replace(/^([📅🏠👕💪🏖️🔵✍️⚠️❓🎯📚🌊🧵🔤👨🎵].*?):/g, '<strong>$1:</strong>')
+        .replace(/([A-Z][a-zA-Z\s]+)(?=[,.])/g, match => {
+          if (match.match(/^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|Yes|No|Do|On|Put|Take|Let|Example|Remember|Examples|Formula|Bertanya|Jawab|Soalan|Materials|Colours|Activities|Clothes|Rooms|Parts|Ability|Actions|Household|Furniture)$/)) {
+            return `<strong>${match}</strong>`;
+          }
+          return match;
+        });
+      html += `<div class="bg-white rounded-lg p-3 border-l-4 border-purple-400"><p class="text-sm text-gray-800 leading-relaxed">${boldNote}</p></div>`;
+    });
+    html += `</div></div>`;
+  }
+  
+  // GRAMMAR SECTION
+  html += `<div class="bg-white rounded-2xl p-5 shadow-lg mb-6">
+    <h3 class="font-bold text-lg mb-4 flex items-center gap-2"><span class="text-2xl">✍️</span><span>Grammar Examples</span></h3>
+    <div class="space-y-2">`;
+  unit.grammar.forEach(g => {
+    html += `<p class="text-sm leading-relaxed p-2 bg-blue-50 rounded-lg">${g.sentence.replace(g.highlight, `<span class="bg-blue-300 font-bold px-2 rounded">${g.highlight}</span>`)}</p>`;
+  });
+  html += `</div></div>`;
+  
+  // VOCABULARY SECTION
+  html += `<div class="bg-white rounded-2xl p-5 shadow-lg mb-6">
+    <h3 class="font-bold text-lg mb-4 flex items-center gap-2"><span class="text-2xl">📝</span><span>Vocabulary Flashcards</span></h3>
+    <p class="text-xs text-gray-500 mb-3">Tap to flip cards</p>
+    <div class="grid grid-cols-3 gap-2">`;
+  unit.vocab.forEach(v => {
+    html += `<div class="card-flip cursor-pointer" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner relative h-20">
+        <div class="card-front absolute inset-0 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex flex-col items-center justify-center shadow">
+          <span class="text-2xl">${v.emoji}</span><span class="text-xs font-bold mt-1">${v.word}</span>
+        </div>
+        <div class="card-back absolute inset-0 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-xl flex items-center justify-center shadow">
+          <span class="text-xs text-center font-bold px-1">${v.word}</span>
+        </div>
+      </div>
+    </div>`;
+  });
+  html += `</div></div>`;
+  
+  // QUIZ SECTION
+  html += `<h3 class="font-bold text-lg mb-4 mt-6 flex items-center gap-2"><span class="text-2xl">❓</span><span>Quiz Time</span></h3><div id="quiz-area"></div>`;
+  html += `</div>`;
+  
+  container.innerHTML = html;
+  renderQuiz(unit.quiz, num);
+  showView('view-unit-detail');
+}
+
+function renderQuiz(questions, unitNum) {
+  const area = document.getElementById('quiz-area');
+  let idx = 0, score = 0;
+  function showQ() {
+    if (idx >= questions.length) {
+      const stars = Math.ceil((score / questions.length) * 3);
+      if (!state.completed.includes(unitNum)) { state.completed.push(unitNum); }
+      state.stars += stars; saveState();
+      area.innerHTML = `<div class="bg-white rounded-xl p-6 shadow text-center">
+        <p class="text-4xl star-pop">⭐</p>
+        <p class="font-bold text-xl mt-2">Tahniah! 🎉</p>
+        <p class="text-lg">Skor: ${score}/${questions.length}</p>
+        <p class="text-yellow-500 text-2xl">${'⭐'.repeat(stars)}</p>
+        <button onclick="showView('view-units')" class="mt-3 bg-blue-500 text-white px-6 py-2 rounded-xl font-bold">OK</button>
+      </div>`;
+      return;
+    }
+    const q = questions[idx];
+    let h = `<div class="bg-white rounded-xl p-4 shadow mb-3 fade-in">
+      <p class="font-bold mb-3">${idx+1}. ${q.q}</p><div class="space-y-2">`;
+    q.opts.forEach((opt, i) => {
+      h += `<button class="quiz-opt w-full text-left px-4 py-2 rounded-lg border-2 border-gray-200 hover:border-blue-400 font-medium" data-i="${i}">${opt}</button>`;
+    });
+    h += `</div><p id="correct-feedback" class="text-sm mt-2 hidden text-green-700 font-bold"></p></div>`;
+    area.innerHTML = h;
+    area.querySelectorAll('.quiz-opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const chosen = parseInt(btn.dataset.i);
+        area.querySelectorAll('.quiz-opt').forEach(b => b.disabled = true);
+        if (chosen === q.ans) {
+          score++; btn.classList.add('bg-green-200','border-green-500');
+        } else {
+          btn.classList.add('bg-red-200','border-red-500');
+          // Highlight correct answer
+          area.querySelectorAll('.quiz-opt')[q.ans].classList.add('bg-green-200','border-green-500');
+          const fb = document.getElementById('correct-feedback');
+          fb.textContent = '✅ Jawapan betul: ' + q.opts[q.ans];
+          fb.classList.remove('hidden');
+        }
+        setTimeout(() => { idx++; showQ(); }, 1200);
+      });
+    });
+  }
+  showQ();
+}
+
+// Listening
+function initListening() {
+  const items = [
+    {text:"Open your book.",emoji:"📖"},{text:"Stand up.",emoji:"🧍"},{text:"Sit down.",emoji:"🪑"},
+    {text:"Close the door.",emoji:"🚪"},{text:"Look at the board.",emoji:"📋"},{text:"Listen carefully.",emoji:"👂"}
+  ];
+  const grid = document.getElementById('instructions-grid');
+  grid.innerHTML = '';
+  items.forEach(item => {
+    grid.innerHTML += `<button onclick="speak('${item.text}')" class="bg-purple-100 rounded-xl p-3 text-center shadow hover:bg-purple-200 transition">
+      <span class="text-2xl block">${item.emoji}</span><span class="text-xs font-bold">${item.text}</span>
+    </button>`;
+  });
+  const activity = document.getElementById('listening-activity');
+  const listenQ = [
+    {audio:"I play football on Monday.",opts:["⚽ football","📚 read","🎨 draw"],ans:0},
+    {audio:"The cat is under the table.",opts:["on","under","in"],ans:1},
+    {audio:"She is wearing a red skirt.",opts:["skirt","shoes","hat"],ans:0}
+  ];
+  let html = '';
+  listenQ.forEach((q,i) => {
+    html += `<div class="border rounded-xl p-3">
+      <button onclick="speak('${q.audio}')" class="bg-purple-500 text-white px-3 py-1 rounded-lg text-sm mb-2">🔊 Dengar</button>
+      <p class="text-sm font-medium mb-2">Pilih jawapan:</p>
+      <div class="flex gap-2 flex-wrap" id="listen-q-${i}">`;
+    q.opts.forEach((opt, j) => {
+      html += `<button class="listen-opt px-3 py-1 rounded-lg border text-sm" data-qi="${i}" data-ans="${q.ans}" data-j="${j}">${opt}</button>`;
+    });
+    html += `</div></div>`;
+  });
+  activity.innerHTML = html;
+  activity.querySelectorAll('.listen-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const correct = parseInt(btn.dataset.j) === parseInt(btn.dataset.ans);
+      btn.classList.add(correct ? 'bg-green-200' : 'bg-red-200');
+      if (!correct) {
+        const parent = btn.parentElement;
+        parent.querySelectorAll('.listen-opt')[parseInt(btn.dataset.ans)].classList.add('bg-green-200');
+      }
+    });
+  });
+}
+
+function speak(text) {
+  if ('speechSynthesis' in window) {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    u.rate = 0.85;
+    u.pitch = 1.0;
+    u.volume = 1.0;
+    speechSynthesis.speak(u);
+  }
+}
+
+function initSpeaking() {
+  const convos = [
+    {q:"What is your hobby?", a:"I like reading."},
+    {q:"What do you do on Sunday?", a:"I play games."},
+    {q:"Can you swim?", a:"Yes, I can swim."},
+    {q:"What are you wearing?", a:"I am wearing a blue shirt."},
+    {q:"Where is the cat?", a:"The cat is under the table."}
+  ];
+  const container = document.getElementById('speaking-cards');
+  container.innerHTML = '<h3 class="font-bold text-lg">🗣 Latihan Perbualan</h3>';
+  convos.forEach(c => {
+    container.innerHTML += `<div class="border-2 border-pink-200 rounded-xl p-4">
+      <p class="text-sm text-gray-500 mb-1">Teacher asks:</p>
+      <p class="font-bold text-lg mb-2">"${c.q}" <button onclick="speak('${c.q}')" class="text-pink-500">🔊</button></p>
+      <p class="text-sm text-gray-500 mb-1">You answer:</p>
+      <p class="font-bold text-green-700">"${c.a}" <button onclick="speak('${c.a}')" class="text-green-500">🔊</button></p>
+    </div>`;
+  });
+}
+
+function initReading() {
+  const container = document.getElementById('reading-content');
+  const passages = [
+    {
+      title: "📖 A Day at the Beach",
+      text: "Ali and Siti go to the <b>beach</b>. Ali can <b>swim</b>. Siti likes to build a <b>sandcastle</b>. They see a <b>crab</b> and a <b>starfish</b>. It is a fun day!",
+      questions: [
+        {q:"Where do Ali and Siti go?",opts:["beach","school","park"],ans:0},
+        {q:"Who can swim?",opts:["Ali","Siti","Teacher"],ans:0},
+        {q:"What does Siti build?",opts:["sandcastle","house","robot"],ans:0}
+      ]
+    },
+    {
+      title: "📖 My Room",
+      text: "This is my <b>bedroom</b>. My <b>bed</b> is next to the <b>lamp</b>. The <b>books</b> are on the <b>table</b>. My <b>toys</b> are in the <b>cupboard</b>.",
+      questions: [
+        {q:"What is next to the lamp?",opts:["bed","table","cupboard"],ans:0},
+        {q:"Where are the books?",opts:["on the table","under the bed","in the cupboard"],ans:0},
+        {q:"Where are the toys?",opts:["in the cupboard","on the bed","under the table"],ans:0}
+      ]
+    },
+    {
+      title: "📖 What I Wear",
+      text: "On Monday, I wear a <b>blue shirt</b>. On Tuesday, I wear <b>shorts</b>. On Wednesday, I wear a <b>red dress</b>. My <b>shoes</b> are black. I like my <b>clothes</b>!",
+      questions: [
+        {q:"What does the speaker wear on Monday?",opts:["blue shirt","shorts","red dress"],ans:0},
+        {q:"What colour are the shoes?",opts:["red","blue","black"],ans:2},
+        {q:"What does the speaker wear on Wednesday?",opts:["shirt","red dress","shorts"],ans:1}
+      ]
+    },
+    {
+      title: "📖 My Hobby",
+      text: "My name is Raj. On Saturday, I like to <b>play football</b>. On Sunday, I like to <b>ride a bike</b>. My friend Ina likes to <b>draw pictures</b>. We have <b>fun</b> together!",
+      questions: [
+        {q:"What does Raj like to do on Saturday?",opts:["ride a bike","play football","draw pictures"],ans:1},
+        {q:"What is Ina's hobby?",opts:["play football","ride a bike","draw pictures"],ans:2},
+        {q:"Do they have fun together?",opts:["Yes","No","Maybe"],ans:0}
+      ]
+    },
+    {
+      title: "📖 At The Zoo",
+      text: "We go to the <b>zoo</b>. There is a <b>lion</b>. There are <b>monkeys</b>. There is a <b>elephant</b>. The animals are <b>big</b>. It is a great day!",
+      questions: [
+        {q:"Where do they go?",opts:["beach","park","zoo"],ans:2},
+        {q:"Is there a lion?",opts:["Yes","No"],ans:0},
+        {q:"Are there monkeys?",opts:["Yes, there are","No, there aren't"],ans:0}
+      ]
+    }
+  ];
+  
+  let currentPassageIdx = 0;
+  
+  function showPassage(idx) {
+    const passage = passages[idx];
+    // Extract sentences from the passage text
+    const sentencesRaw = passage.text.replace(/<b>/g, '').replace(/<\/b>/g, '').split(/(?<=[.!?])\s+/);
+    const sentences = sentencesRaw.filter(s => s.trim().length > 0);
+    
+    let sentencesHtml = '';
+    sentences.forEach((sentence, sentIdx) => {
+      sentencesHtml += `<div class="flex items-start gap-2 mb-2">
+        <button onclick="window.speakSentence('${sentence.replace(/'/g, "\\'")}')" class="flex-shrink-0 bg-blue-500 hover:bg-blue-600 text-white px-2 py-1 rounded text-sm font-bold transition">🔊</button>
+        <p class="text-base leading-relaxed bg-blue-50 p-3 rounded-lg flex-1">${sentence}</p>
+      </div>`;
+    });
+    
+    container.innerHTML = `
+      <div class="bg-white rounded-2xl p-5 shadow-lg mb-4">
+        <h3 class="font-bold text-lg mb-3">${passage.title}</h3>
+        <div class="mb-4">${sentencesHtml}</div>
+        <h4 class="font-bold mt-4 mb-3">Soalan:</h4>
+        <div class="space-y-2" id="reading-quiz"></div>
+      </div>`;
+    
+    renderReadingQuiz(passage.questions, 'reading-quiz', idx);
+  }
+  
+  window.speakSentence = function(text) {
+    if ('speechSynthesis' in window) {
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-US';
+      u.rate = 0.85;
+      u.pitch = 1.0;
+      u.volume = 1.0;
+      speechSynthesis.speak(u);
+    }
+  };
+  
+  function renderReadingQuiz(questions, containerId, passageIdx) {
+    const quiz = document.getElementById(containerId);
+    let allAnswered = 0;
+    
+    questions.forEach((q, i) => {
+      let h = `<div class="border rounded-lg p-2" id="q-${i}"><p class="font-medium text-sm mb-1">${i+1}. ${q.q}</p><div class="flex gap-2 flex-wrap">`;
+      q.opts.forEach((o, j) => {
+        h += `<button class="rdg-opt px-2 py-1 rounded border text-xs" data-ans="${q.ans}" data-j="${j}">${o}</button>`;
+      });
+      h += '</div></div>';
+      quiz.innerHTML += h;
+    });
+    
+    quiz.querySelectorAll('.rdg-opt').forEach((btn, btnIdx) => {
+      btn.addEventListener('click', () => {
+        const parent = btn.parentElement;
+        const alreadyAnswered = parent.querySelector('.bg-green-200, .bg-red-200');
+        if (alreadyAnswered) return;
+        
+        const correct = parseInt(btn.dataset.j) === parseInt(btn.dataset.ans);
+        btn.classList.add(correct ? 'bg-green-200' : 'bg-red-200');
+        parent.querySelectorAll('.rdg-opt').forEach(b => b.disabled = true);
+        
+        if (!correct) {
+          const siblings = parent.querySelectorAll('.rdg-opt');
+          siblings[parseInt(btn.dataset.ans)].classList.add('bg-green-200');
+        }
+        
+        allAnswered++;
+        if (allAnswered === questions.length) {
+          setTimeout(() => showNextButton(passageIdx), 800);
+        }
+      });
+    });
+  }
+  
+  function showNextButton(passageIdx) {
+    if (passageIdx < passages.length - 1) {
+      const quizDiv = document.getElementById('reading-quiz');
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'w-full bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold transition mt-4';
+      nextBtn.textContent = '➡️ Next Passage';
+      nextBtn.addEventListener('click', () => {
+        currentPassageIdx++;
+        showPassage(currentPassageIdx);
+      });
+      quizDiv.appendChild(nextBtn);
+    } else {
+      const quizDiv = document.getElementById('reading-quiz');
+      const doneBtn = document.createElement('button');
+      doneBtn.className = 'w-full bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg font-bold transition mt-4';
+      doneBtn.textContent = '🎉 All Done!';
+      doneBtn.addEventListener('click', () => showView('view-home'));
+      quizDiv.appendChild(doneBtn);
+    }
+  }
+  
+  showPassage(0);
+}
+
+function initWriting() {
+  const container = document.getElementById('writing-content');
+  const exercises = [
+    {prompt:"🏊 (a boy swimming)", instruction:"Tulis: Lelaki itu sedang apa?", answer:"He can swim."},
+    {prompt:"⚽ (a boy playing football)", instruction:"Tulis: Lelaki itu buat apa?", answer:"He plays football."},
+    {prompt:"📚 (a girl reading)", instruction:"Tulis: Gadis itu buat apa?", answer:"She reads books."},
+    {prompt:"👗 (a girl wearing a dress)", instruction:"Tulis: Gadis itu pakai apa?", answer:"She is wearing a dress."},
+    {prompt:"🐱 (a cat under the table)", instruction:"Tulis: Kucing itu berada di mana?", answer:"The cat is under the table."}
+  ];
+  let html = '<div class="bg-white rounded-2xl p-5 shadow-lg space-y-4"><h3 class="font-bold text-lg mb-4">✍ Tulis Ayat (Write Sentences)</h3>';
+  exercises.forEach((ex, i) => {
+    html += `<div class="border-2 border-orange-200 rounded-xl p-4 bg-orange-50">
+      <div class="flex items-start gap-3 mb-3">
+        <span class="text-3xl">${ex.prompt.split(' ')[0]}</span>
+        <div class="flex-1">
+          <p class="text-xs text-gray-600 mb-1">Gambar:</p>
+          <p class="text-sm font-medium text-gray-800">${ex.prompt.split('(')[1].replace(')', '')}</p>
+        </div>
+      </div>
+      <div class="bg-yellow-100 border-l-4 border-yellow-500 p-2 rounded mb-3">
+        <p class="text-sm font-bold text-yellow-800">📌 Arahan:</p>
+        <p class="text-sm text-yellow-900">${ex.instruction}</p>
+      </div>
+      <input type="text" id="write-${i}" class="w-full border-2 border-orange-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-orange-500" placeholder="Tulis ayat di sini...">
+      <button onclick="checkWriting(${i},'${ex.answer.replace(/'/g,"\\'")}')" class="mt-2 w-full bg-orange-500 hover:bg-orange-600 text-white px-3 py-2 rounded-lg font-bold transition">Semak ✓</button>
+      <p id="write-fb-${i}" class="text-sm mt-2"></p>
+    </div>`;
+  });
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+function checkWriting(i, answer) {
+  const input = document.getElementById('write-'+i).value.trim();
+  const fb = document.getElementById('write-fb-'+i);
+  if (input.toLowerCase() === answer.toLowerCase()) {
+    fb.textContent = '✅ Betul! Excellent!'; fb.className = 'text-sm mt-1 text-green-600 font-bold';
+  } else {
+    fb.textContent = '❌ Cuba lagi. Jawapan betul: ' + answer; fb.className = 'text-sm mt-1 text-red-600';
+  }
+}
+
+function startGame(type) {
+  const area = document.getElementById('game-area');
+  if (type === 'matching') {
+    const pairs = [{w:"kitchen",e:"🍳"},{w:"bedroom",e:"🛏"},{w:"shoes",e:"👟"},{w:"dolphin",e:"🐬"},{w:"hat",e:"🎩"},{w:"crab",e:"🦀"}];
+    const shuffledW = [...pairs].sort(() => Math.random()-0.5);
+    const shuffledE = [...pairs].sort(() => Math.random()-0.5);
+    let html = '<div class="bg-white rounded-2xl p-4 shadow-lg"><h3 class="font-bold mb-3">🔗 Padankan! (Match)</h3><div class="grid grid-cols-2 gap-2">';
+    html += '<div class="space-y-2">';
+    shuffledW.forEach(p => html += `<button class="match-word w-full px-3 py-2 rounded-lg border-2 border-blue-300 text-sm font-bold" data-word="${p.w}">${p.w}</button>`);
+    html += '</div><div class="space-y-2">';
+    shuffledE.forEach(p => html += `<button class="match-emoji w-full px-3 py-2 rounded-lg border-2 border-pink-300 text-2xl" data-word="${p.w}">${p.e}</button>`);
+    html += '</div></div></div>';
+    area.innerHTML = html;
+    let selected = null;
+    area.querySelectorAll('.match-word,.match-emoji').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (!selected) { selected = btn; btn.classList.add('bg-yellow-200'); }
+        else {
+          if (selected.dataset.word === btn.dataset.word && selected !== btn) {
+            selected.classList.add('bg-green-200','border-green-500');
+            btn.classList.add('bg-green-200','border-green-500');
+            selected.disabled = true; btn.disabled = true;
+          } else {
+            selected.classList.remove('bg-yellow-200');
+            btn.classList.add('bg-red-100');
+            setTimeout(() => btn.classList.remove('bg-red-100'), 300);
+          }
+          selected.classList.remove('bg-yellow-200');
+          selected = null;
+        }
+      });
+    });
+  } else if (type === 'memory') {
+    const cards = [{e:"⚽",w:"football"},{e:"🚲",w:"bike"},{e:"📺",w:"TV"},{e:"🎨",w:"draw"},{e:"🐢",w:"turtle"},{e:"🦀",w:"crab"}];
+    const deck = [...cards,...cards].sort(() => Math.random()-0.5);
+    let html = '<div class="bg-white rounded-2xl p-4 shadow-lg"><h3 class="font-bold mb-3">🃏 Memory Cards</h3><div class="grid grid-cols-4 gap-2">';
+    deck.forEach((c,i) => {
+      html += `<button class="mem-card w-full aspect-square rounded-xl bg-indigo-400 text-white font-bold text-lg flex items-center justify-center" data-idx="${i}" data-val="${c.w}">?</button>`;
+    });
+    html += '</div></div>';
+    area.innerHTML = html;
+    let flipped = [], matched = 0;
+    area.querySelectorAll('.mem-card').forEach(card => {
+      card.addEventListener('click', () => {
+        if (flipped.length >= 2 || card.dataset.found) return;
+        const c = deck[card.dataset.idx];
+        card.textContent = c.e; card.classList.add('bg-white','text-black','border-2');
+        flipped.push(card);
+        if (flipped.length === 2) {
+          if (flipped[0].dataset.val === flipped[1].dataset.val) {
+            flipped.forEach(f => { f.dataset.found = '1'; f.classList.add('bg-green-200'); });
+            matched++; flipped = [];
+          } else {
+            setTimeout(() => {
+              flipped.forEach(f => { f.textContent = '?'; f.classList.remove('bg-white','text-black','border-2'); });
+              flipped = [];
+            }, 600);
+          }
+        }
+      });
+    });
+  } else if (type === 'spelling') {
+    const words = ["kitchen","dolphin","jacket","Tuesday","starfish","bedroom","trousers"];
+    let idx = 0;
+    function showSpell() {
+      if (idx >= words.length) { area.innerHTML = '<div class="bg-white rounded-2xl p-4 shadow-lg text-center"><p class="text-3xl">🎉</p><p class="font-bold">Tahniah! All done!</p></div>'; return; }
+      const w = words[idx];
+      const shuffled = w.split('').sort(() => Math.random()-0.5).join('');
+      area.innerHTML = `<div class="bg-white rounded-2xl p-4 shadow-lg text-center">
+        <h3 class="font-bold mb-2">✏️ Spell the word</h3>
+        <p class="text-2xl font-bold text-purple-600 mb-3 tracking-widest">${shuffled}</p>
+        <input type="text" id="spell-input" class="border-2 rounded-lg px-3 py-2 text-center text-lg w-48" placeholder="Type here...">
+        <br><button onclick="checkSpell('${w}')" class="mt-3 bg-green-500 text-white px-4 py-2 rounded-lg font-bold">Check ✓</button>
+        <button onclick="showHint('${w}')" class="mt-3 ml-2 bg-yellow-500 text-white px-4 py-2 rounded-lg font-bold">Hint 💡</button>
+        <p id="spell-fb" class="mt-2"></p>
+        <p id="spell-hint" class="mt-2 text-sm text-blue-600"></p>
+      </div>`;
+    }
+    showSpell();
+    window.showHint = function(word) {
+      const hintEl = document.getElementById('spell-hint');
+      const hints = {
+        "kitchen": "This is where you cook 🍳",
+        "dolphin": "A smart sea animal 🐬",
+        "jacket": "You wear this when cold 🧥",
+        "Tuesday": "The second day of the week 📅",
+        "starfish": "A sea star with 5 arms ⭐",
+        "bedroom": "Where you sleep 🛏",
+        "trousers": "Long pants for legs 👖"
+      };
+      hintEl.textContent = '💡 Hint: ' + (hints[word] || 'Think carefully!');
+    };
+    window.checkSpell = function(answer) {
+      const input = document.getElementById('spell-input').value.trim();
+      const fb = document.getElementById('spell-fb');
+      const hintEl = document.getElementById('spell-hint');
+      if (input.toLowerCase() === answer.toLowerCase()) { 
+        fb.textContent = '✅ Correct!'; 
+        fb.className = 'mt-2 text-green-600 font-bold'; 
+        hintEl.textContent = '';
+        state.stars++; 
+        saveState(); 
+        setTimeout(() => { idx++; showSpell(); }, 800); 
+      }
+      else { 
+        fb.textContent = '❌ Wrong! Moving to next word...'; 
+        fb.className = 'mt-2 text-red-600 font-bold';
+        hintEl.textContent = '';
+        setTimeout(() => { idx++; showSpell(); }, 1200);
+      }
+    };
+  } else if (type === 'quiz') {
+    let allQ = [];
+    Object.values(UNITS).forEach(u => allQ.push(...u.quiz));
+    allQ = allQ.sort(() => Math.random()-0.5).slice(0,10);
+    renderGameQuiz(allQ, area);
+  }
+}
+
+function renderGameQuiz(questions, area) {
+  let idx = 0, score = 0;
+  function showQ() {
+    if (idx >= questions.length) {
+      state.stars += score; saveState();
+      area.innerHTML = `<div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+        <p class="text-4xl star-pop">🏆</p><p class="font-bold text-xl">Skor: ${score}/${questions.length}</p>
+        <p class="text-yellow-500 text-xl">${'⭐'.repeat(Math.min(score,5))}</p>
+      </div>`;
+      return;
+    }
+    const q = questions[idx];
+    let h = `<div class="bg-white rounded-2xl p-4 shadow-lg fade-in"><p class="font-bold mb-3">${idx+1}. ${q.q}</p><div class="space-y-2">`;
+    q.opts.forEach((o,j) => h += `<button class="gq-opt w-full text-left px-4 py-2 rounded-lg border-2 text-sm font-medium border-gray-200" data-j="${j}">${o}</button>`);
+    h += '</div><p id="gq-feedback" class="text-sm mt-2 hidden text-green-700 font-bold"></p></div>';
+    area.innerHTML = h;
+    area.querySelectorAll('.gq-opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        area.querySelectorAll('.gq-opt').forEach(b => b.disabled = true);
+        if (parseInt(btn.dataset.j) === q.ans) { score++; btn.classList.add('bg-green-200','border-green-500'); }
+        else {
+          btn.classList.add('bg-red-200','border-red-500');
+          area.querySelectorAll('.gq-opt')[q.ans].classList.add('bg-green-200','border-green-500');
+          const fb = document.getElementById('gq-feedback');
+          fb.textContent = '✅ Jawapan betul: ' + q.opts[q.ans];
+          fb.classList.remove('hidden');
+        }
+        setTimeout(() => { idx++; showQ(); }, 1200);
+      });
+    });
+  }
+  showQ();
+}
+
+function initAchievements() {
+  document.getElementById('achieve-avatar').textContent = state.avatar;
+  document.getElementById('achieve-name').textContent = state.name || 'Student';
+  document.getElementById('total-stars').textContent = state.stars;
+  const badges = [
+    {name:"Vocabulary Master",emoji:"🏅",req:state.completed.length>=2},
+    {name:"Listening Hero",emoji:"🎧",req:state.stars>=5},
+    {name:"Speaking Star",emoji:"⭐",req:state.stars>=10},
+    {name:"Reading Champion",emoji:"📖",req:state.completed.length>=3},
+    {name:"Writing Expert",emoji:"✍",req:state.completed.length>=5}
+  ];
+  const grid = document.getElementById('badges-grid');
+  grid.innerHTML = '';
+  badges.forEach(b => {
+    grid.innerHTML += `<div class="rounded-2xl p-4 text-center shadow ${b.req ? 'bg-yellow-100 border-2 border-yellow-400':'bg-gray-100 opacity-50'}">
+      <p class="text-3xl">${b.emoji}</p><p class="text-xs font-bold mt-1">${b.name}</p>
+      <p class="text-xs">${b.req?'✅ Unlocked':'🔒 Locked'}</p>
+    </div>`;
+  });
+}
+
+function initSettings() {
+  document.getElementById('settings-avatar').textContent = state.avatar;
+  document.getElementById('settings-name').textContent = state.name || 'Student';
+  document.getElementById('stats-units').textContent = state.completed.length;
+  document.getElementById('stats-stars').textContent = state.stars;
+  const pct = Math.min(100, Math.round((state.completed.length / 5) * 100));
+  document.getElementById('stats-progress').textContent = pct + '%';
+}
+
+function initVocabulary() {
+  const grid = document.getElementById('vocabulary-grid');
+  const filter = document.getElementById('vocab-unit-filter');
+  
+  function renderVocab(unitNum) {
+    grid.innerHTML = '';
+    const unit = unitNum === 'all' ? null : UNITS[parseInt(unitNum)];
+    const allVocab = [];
+    
+    if (unitNum === 'all') {
+      Object.values(UNITS).forEach(u => allVocab.push(...u.vocab));
+    } else {
+      allVocab.push(...unit.vocab);
+    }
+    
+    const uniqueVocab = [];
+    const seen = new Set();
+    allVocab.forEach(v => {
+      if (!seen.has(v.word)) {
+        uniqueVocab.push(v);
+        seen.add(v.word);
+      }
+    });
+    
+    uniqueVocab.forEach(v => {
+      const card = document.createElement('div');
+      card.className = 'card-flip cursor-pointer bg-white rounded-xl shadow-md overflow-hidden';
+      card.style.aspectRatio = '1';
+      card.innerHTML = `
+        <div class="card-inner relative h-full">
+          <div class="card-front absolute inset-0 bg-gradient-to-br from-blue-100 to-blue-200 flex flex-col items-center justify-center p-3">
+            <span class="text-3xl mb-2">${v.emoji}</span>
+            <button onclick="event.stopPropagation(); speak('${v.word}')" class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-2 py-1 rounded font-bold transition mb-1">🔊</button>
+            <span class="text-xs font-bold text-center text-blue-800">${v.word}</span>
+          </div>
+          <div class="card-back absolute inset-0 bg-gradient-to-br from-yellow-100 to-yellow-200 flex items-center justify-center p-3">
+            <span class="text-xs text-center font-bold text-yellow-900">${v.word}</span>
+          </div>
+        </div>
+      `;
+      card.addEventListener('click', function() {
+        this.classList.toggle('flipped');
+      });
+      grid.appendChild(card);
+    });
+  }
+  
+  filter.addEventListener('change', (e) => {
+    renderVocab(e.target.value);
+  });
+  
+  renderVocab('all');
+}
+
+function resetStudent() {
+  // Inline confirmation
+  const btn = event.target;
+  if (btn.dataset.confirm) {
+    state = {name:'',avatar:'🧒',stars:0,completed:[],badges:[]};
+    saveState(); showView('view-home'); initHome();
+    btn.textContent = 'Reset Student'; btn.dataset.confirm = '';
+  } else {
+    btn.textContent = 'Tap again to confirm'; btn.dataset.confirm = '1';
+    setTimeout(() => { btn.textContent = 'Reset Student'; btn.dataset.confirm = ''; }, 3000);
+  }
+}
+
+function exportData() {
+  const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = 'english-adventure-data.json';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
+}
+
+function clearData() {
+  const btn = event.target;
+  if (btn.dataset.confirm) {
+    localStorage.removeItem('ea2_state');
+    state = {name:'',avatar:'🧒',stars:0,completed:[],badges:[]};
+    showView('view-home'); initHome(); initSettings();
+    btn.textContent = 'Clear All Data'; btn.dataset.confirm = '';
+  } else {
+    btn.textContent = 'Tap again to confirm'; btn.dataset.confirm = '1';
+    setTimeout(() => { btn.textContent = 'Clear All Data'; btn.dataset.confirm = ''; }, 3000);
+  }
+}
+
+const EXAM_SET_1 = {
+  title: "SET 1: GRAMMAR, PUNCTUATION & SENTENCE CONSTRUCTION",
+  sections: [
+    {
+      title: "SECTION A: Grammar & Punctuation MCQs (Questions 1-20)",
+      type: "mcq",
+      questions: [
+        {q:"her name is amy. (Fix the punctuation)", opts:["Her name is amy.","her name is Amy.","Her name is Amy."], ans:2},
+        {q:"what do you do on sundays (Fix the punctuation)", opts:["What do you do on Sundays?","What do you do on sundays.","what do you do on Sundays!"], ans:0},
+        {q:"I like this dress __________ I don't like those shoes.", opts:["and","but","or"], ans:1},
+        {q:"Ben __________ playing computer games in his bedroom.", opts:["is","are","am"], ans:0},
+        {q:"We __________ ride our bikes in the park on Saturdays.", opts:["doesn't","don't","isn't"], ans:1},
+        {q:"Look at __________ big bird flying high up in the sky!", opts:["this","these","that"], ans:2},
+        {q:"Please put your dirty socks __________ the laundry basket.", opts:["in","on","under"], ans:0},
+        {q:"__________ elephant is a very big animal.", opts:["A","An","Many"], ans:1},
+        {q:"My brother __________ swim very fast, but he cannot fly.", opts:["can","can't","is"], ans:0},
+        {q:"Are there two old houses on the hill? Yes, there __________.", opts:["is","are","am"], ans:1},
+        {q:"Do you like this yellow sweater __________ Yes, I do.", opts:[".",".",,"?"], ans:2},
+        {q:"The cat is sleeping __________ the table on the floor.", opts:["on","under","in"], ans:1},
+        {q:"She __________ her teeth every morning.", opts:["brush","brushes","brushing"], ans:1},
+        {q:"They __________ go to school on Sundays.", opts:["don't","doesn't","isn't"], ans:0},
+        {q:"Dynamic robots __________ run very fast.", opts:["can","cannot","am"], ans:0},
+        {q:"Is there a sofa in the living room __________", opts:["?",".","!"], ans:0},
+        {q:"He put his hat __________ his head.", opts:["in","under","on"], ans:2},
+        {q:"Sara __________ have a pink skirt.", opts:["doesn't","don't","isn't"], ans:0},
+        {q:"Let's __________ a sandcastle on the beach.", opts:["make","makes","making"], ans:0},
+        {q:"i live in kuala lumpur. (Fix the punctuation)", opts:["I live in kuala lumpur.","I live in Kuala Lumpur.","i live in Kuala Lumpur."], ans:1}
+      ]
+    },
+    {
+      title: "SECTION B: Error Correction & Punctuation (Questions 21-35)",
+      type: "correction",
+      questions: [
+        {q:"she do not like this jacket", ans:"She does not like this jacket."},
+        {q:"there is three robots in the box", ans:"There are three robots in the box."},
+        {q:"where is my blue socks", ans:"Where are my blue socks?"},
+        {q:"let's eat an ice cream on monday", ans:"Let's eat an ice cream on Monday."},
+        {q:"a frog can flying high", ans:"A frog can fly high."},
+        {q:"do you play football on fridays", ans:"Do you play football on Fridays?"},
+        {q:"the dog are under the stairs", ans:"The dog is under the stairs."},
+        {q:"no i cannot ride a horse", ans:"No, I cannot ride a horse."},
+        {q:"look at this monkeys up on the tree", ans:"Look at those monkeys up on the tree."},
+        {q:"we goes swimming on wednesdays", ans:"We go swimming on Wednesdays."},
+        {q:"help me clean the kitchen adam", ans:"Help me clean the kitchen, Adam."},
+        {q:"he watch tv in the living room", ans:"He watches TV in the living room."},
+        {q:"are there a cellar in the house", ans:"Is there a cellar in the house?"},
+        {q:"i wear jeans sweater and shoes", ans:"I wear jeans, a sweater, and shoes."},
+        {q:"can a fish walk on land", ans:"Can a fish walk on land?"}
+      ]
+    },
+    {
+      title: "SECTION C: Sentence Construction (Questions 36-50)",
+      type: "construction",
+      questions: [
+        {words:["on","play","Saturdays","football","I","."], ans:"I play football on Saturdays."},
+        {words:["house","there","old","is","an","here","."], ans:"There is an old house here."},
+        {words:["coat","your","on","put","please","."], ans:"Please put on your coat."},
+        {words:["fly","a","bird","sky","can","the","in","."], ans:"A bird can fly in the sky."},
+        {words:["shell","a","let's","look","for","beach","the","on","."], ans:"Let's look for a shell on the beach."},
+        {words:["sofa","under","the","ball","the","is","."], ans:"The ball is under the sofa."},
+        {words:["don't","shoes","like","I","dirty","these","."], ans:"I don't like these dirty shoes."},
+        {words:["swim","ocean","the","can","fish","in","."], ans:"Fish can swim in the ocean."},
+        {words:["bedrooms","there","three","upstairs","are","."], ans:"There are three bedrooms upstairs."},
+        {words:["song","a","let's","sing","together","."], ans:"Let's sing a song together."},
+        {words:["clock","the","wall","the","is","on","."], ans:"The clock is on the wall."},
+        {words:["watch","on","TV","Fridays","they","."], ans:"They watch TV on Fridays."},
+        {words:["hat","beautiful","do","like","you","this","?"], ans:"Do you like this beautiful hat?"},
+        {words:["robot","walk","legs","cannot","without","a","."], ans:"A robot cannot walk without legs."},
+        {words:["kitchen","mother","is","cooking","the","in","my","."], ans:"My mother is cooking in the kitchen."}
+      ]
+    }
+  ]
+};
+
+const EXAM_SET_2 = {
+  title: "SET 2: GRAMMAR, PUNCTUATION & SENTENCE CONSTRUCTION",
+  sections: [
+    {
+      title: "SECTION A: Grammar & Punctuation MCQs (Questions 1-20)",
+      type: "mcq",
+      questions: [
+        {q:"wow that robot is so cool (Fix the punctuation)", opts:["Wow! That robot is so cool.","wow that robot is so cool?","Wow that robot is so cool."], ans:0},
+        {q:"open your book on page ten (Fix the punctuation)", opts:["open your book on page ten.","Open your book on page ten.","Open your book on page ten?"], ans:1},
+        {q:"There __________ many small shells on the warm beach.", opts:["is","am","are"], ans:2},
+        {q:"He __________ ride a horse because he is too small.", opts:["can't","can","isn't"], ans:0},
+        {q:"Does Lily like this pink skirt __________ No, she doesn't.", opts:[".","?","!"], ans:1},
+        {q:"We have English classes __________ Tuesdays and Thursdays.", opts:["at","in","on"], ans:2},
+        {q:"Put your books __________ the desk so you can write.", opts:["under","on","in"], ans:1},
+        {q:"Look at __________ shoes on my feet. They fit perfectly.", opts:["this","that","these"], ans:2},
+        {q:"I like apples __________ bananas. They are both delicious.", opts:["but","and","or"], ans:1},
+        {q:"A bird __________ fly, but it cannot swim.", opts:["can","can't","does"], ans:0},
+        {q:"Is there __________ old car in the garage?", opts:["a","an","some"], ans:1},
+        {q:"They __________ watch TV on weekdays.", opts:["doesn't","don't","isn't"], ans:1},
+        {q:"The mice are hiding __________ the big old bed.", opts:["under","on","up"], ans:0},
+        {q:"Let's __________ a picture of the beach.", opts:["paint","paints","painting"], ans:0},
+        {q:"are you free on saturday (Fix the punctuation)", opts:["Are you free on saturday?","Are you free on Saturday?","are you free on Saturday."], ans:1},
+        {q:"My sister __________ her favourite dress to the party.", opts:["wear","wears","wearing"], ans:1},
+        {q:"Where __________ my red trousers?", opts:["is","am","are"], ans:2},
+        {q:"There __________ a large window in my bedroom.", opts:["is","are","am"], ans:0},
+        {q:"Do you like these shoes __________ Yes, I do.", opts:["?",",","."], ans:0},
+        {q:"Tim and Dan __________ football on Sundays.", opts:["play","plays","playing"], ans:0}
+      ]
+    },
+    {
+      title: "SECTION B: Error Correction & Punctuation (Questions 21-35)",
+      type: "correction",
+      questions: [
+        {q:"my favorite day is friday", ans:"My favorite day is Friday."},
+        {q:"there is two computers in the room", ans:"There are two computers in the room."},
+        {q:"do you like this green hat", ans:"Do you like this green hat?"},
+        {q:"a cat can't climb trees", ans:"A cat can climb trees."},
+        {q:"let's catches some fish today", ans:"Let's catch some fish today."},
+        {q:"where are the cat hiding", ans:"Where is the cat hiding?"},
+        {q:"he do not watch tv on thursdays", ans:"He does not watch TV on Thursdays."},
+        {q:"the keys is on the table", ans:"The keys are on the table."},
+        {q:"look at that beautiful shells over there", ans:"Look at those beautiful shells over there."},
+        {q:"i plays tennis with my friend", ans:"I play tennis with my friend."},
+        {q:"touch your toes sit down and stand up", ans:"Touch your toes, sit down, and stand up."},
+        {q:"an spider have eight legs", ans:"A spider has eight legs."},
+        {q:"are there a bathroom upstairs", ans:"Is there a bathroom upstairs?"},
+        {q:"stop running inside the class ben", ans:"Stop running inside the class, Ben."},
+        {q:"she wear a beautiful skirt", ans:"She wears a beautiful skirt."}
+      ]
+    },
+    {
+      title: "SECTION C: Sentence Construction (Questions 36-50)",
+      type: "construction",
+      questions: [
+        {words:["swimming","we","go","on","Tuesdays","."], ans:"We go swimming on Tuesdays."},
+        {words:["cars","there","two","are","garage","the","in","."], ans:"There are two cars in the garage."},
+        {words:["jacket","off","take","your","warm","."], ans:"Take off your warm jacket."},
+        {words:["piano","a","dog","play","cannot","the","."], ans:"A dog cannot play the piano."},
+        {words:["ice cream","eat","chocolate","let's","a","."], ans:"Let's eat a chocolate ice cream."},
+        {words:["mouse","stairs","the","under","is","the","."], ans:"The mouse is under the stairs."},
+        {words:["like","shorts","don't","I","these","tight","."], ans:"I don't like these tight shorts."},
+        {words:["tree","a","climb","can","monkey","a","."], ans:"A monkey can climb a tree."},
+        {words:["house","there","rooms","are","five","the","in","."], ans:"There are five rooms in the house."},
+        {words:["to","music","listen","let's","good","."], ans:"Let's listen to good music."},
+        {words:["books","bag","the","are","the","in","."], ans:"The books are in the bag."},
+        {words:["rides","bike","his","he","on","Mondays","."], ans:"He rides his bike on Mondays."},
+        {words:["dress","beautiful","you","like","do","this","?"], ans:"Do you like this beautiful dress?"},
+        {words:["fly","a","without","wings","cannot","bird","."], ans:"A bird cannot fly without wings."},
+        {words:["living room","father","is","reading","the","in","my","."], ans:"My father is reading in the living room."}
+      ]
+    }
+  ]
+};
+
+const EXAM_SET_3 = {
+  title: "SET 3: GRAMMAR, PUNCTUATION & SENTENCE CONSTRUCTION",
+  sections: [
+    {
+      title: "SECTION A: Grammar & Punctuation MCQs (Questions 1-20)",
+      type: "mcq",
+      questions: [
+        {q:"what are you doing under the bed (Fix the punctuation)", opts:["What are you doing under the bed?","What are you doing under the bed.","what are you doing under the bed!"], ans:0},
+        {q:"look out for the robot (Fix the punctuation)", opts:["Look out for the robot!","look out for the robot.","Look out for the robot?"], ans:0},
+        {q:"There __________ a small window down in the cellar.", opts:["is","are","am"], ans:0},
+        {q:"A fish __________ walk, but it can swim very well.", opts:["can","can't","does"], ans:1},
+        {q:"Do you like this green cap __________ Yes, I do.", opts:[".","?",","], ans:1},
+        {q:"We play football __________ Wednesdays.", opts:["at","in","on"], ans:2},
+        {q:"The little cat is hiding __________ the big sofa.", opts:["under","on","up"], ans:0},
+        {q:"Look at __________ red trousers over there across the room.", opts:["this","these","those"], ans:2},
+        {q:"I like to eat ice cream __________ cake at the party.", opts:["and","but","or"], ans:0},
+        {q:"A turtle __________ run very fast. It is very slow.", opts:["can","can't","does"], ans:1},
+        {q:"Is there __________ spider on your sweater?", opts:["a","an","many"], ans:1},
+        {q:"Amy __________ like these uncomfortable shoes.", opts:["don't","doesn't","isn't"], ans:1},
+        {q:"Put your socks __________ your feet before putting on shoes.", opts:["in","under","on"], ans:2},
+        {q:"Let's __________ a big sandcastle on the beach today.", opts:["build","builds","building"], ans:0},
+        {q:"my sister's name is mia. (Fix the punctuation)", opts:["My sister's name is mia.","My sister's name is Mia.","my sister's name is Mia."], ans:1},
+        {q:"Ben __________ his bike in the park on Mondays.", opts:["ride","rides","riding"], ans:1},
+        {q:"Where __________ my favourite yellow jeans?", opts:["is","am","are"], ans:2},
+        {q:"There __________ three bedrooms upstairs in the old house.", opts:["is","are","am"], ans:1},
+        {q:"Does he watch TV on Fridays __________ No, he doesn't.", opts:["?",".","!"], ans:0},
+        {q:"Children __________ to listen to beautiful stories.", opts:["like","likes","liking"], ans:0}
+      ]
+    },
+    {
+      title: "SECTION B: Error Correction & Punctuation (Questions 21-35)",
+      type: "correction",
+      questions: [
+        {q:"we do not go to school on saturdays", ans:"We do not go to school on Saturdays."},
+        {q:"there is four chairs in the kitchen", ans:"There are four chairs in the kitchen."},
+        {q:"where is my green trousers", ans:"Where are my green trousers?"},
+        {q:"let's paints a picture of the sea", ans:"Let's paint a picture of the sea."},
+        {q:"a bird can flying high in the sky", ans:"A bird can fly high in the sky."},
+        {q:"do you play tennis on wednesdays", ans:"Do you play tennis on Wednesdays?"},
+        {q:"the books is under the desk", ans:"The books are under the desk."},
+        {q:"yes i can swim in the pool", ans:"Yes, I can swim in the pool."},
+        {q:"look at this robot over there near the window", ans:"Look at that robot over there near the window."},
+        {q:"she go swimming with her brother", ans:"She goes swimming with her brother."},
+        {q:"i like apples oranges and grapes", ans:"I like apples, oranges, and grapes."},
+        {q:"an elephant have a long nose", ans:"An elephant has a long nose."},
+        {q:"are there a toy box in your bedroom", ans:"Is there a toy box in your bedroom?"},
+        {q:"put on your sweater lily because it is cold", ans:"Put on your sweater, Lily, because it is cold."},
+        {q:"a robot cannot runs without battery", ans:"A robot cannot run without battery."}
+      ]
+    },
+    {
+      title: "SECTION C: Sentence Construction (Questions 36-50)",
+      type: "construction",
+      questions: [
+        {words:["computer","plays","games","he","on","Saturdays","."], ans:"He plays computer games on Saturdays."},
+        {words:["table","there","a","kitchen","is","the","in","."], ans:"There is a table in the kitchen."},
+        {words:["clothes","put","away","your","dirty","."], ans:"Put away your dirty clothes."},
+        {words:["fly","a","turtle","cannot","the","sky","in","."], ans:"A turtle cannot fly in the sky."},
+        {words:["shell","look","a","for","let's","sand","the","in","."], ans:"Let's look for a shell in the sand."},
+        {words:["cat","bed","the","under","the","is","."], ans:"The cat is under the bed."},
+        {words:["don't","trousers","like","I","these","old","."], ans:"I don't like these old trousers."},
+        {words:["run","a","horse","fast","can","very","."], ans:"A horse can run very fast."},
+        {words:["house","there","rooms","are","six","the","in","."], ans:"There are six rooms in the house."},
+        {words:["game","a","play","fun","let's","together","."], ans:"Let's play a fun game together."},
+        {words:["keys","pocket","the","are","the","in","."], ans:"The keys are in the pocket."},
+        {words:["watches","on","TV","she","Fridays","."], ans:"She watches TV on Fridays."},
+        {words:["jacket","warm","you","like","do","this","?"], ans:"Do you like this warm jacket?"},
+        {words:["swim","a","without","cannot","fish","water","."], ans:"A fish cannot swim without water."},
+        {words:["bedroom","sister","my","sleeping","is","the","in","."], ans:"My sister is sleeping in the bedroom."}
+      ]
+    }
+  ]
+};
+
+function initExam() {
+  const container = document.getElementById('exam-container');
+  let currentSection = 0;
+  let userAnswers = {};
+  let currentExamSet = EXAM_SET_1;
+  let selectedSet = null;
+  
+  function showSetSelection() {
+    container.innerHTML = `<div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+      <h2 class="font-bold text-2xl mb-4">📝 Choose Examination Set</h2>
+      <div class="space-y-3">
+        <button onclick="window.selectExamSet(1)" class="w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl font-bold transition text-lg">SET 1</button>
+        <button onclick="window.selectExamSet(2)" class="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-bold transition text-lg">SET 2</button>
+        <button onclick="window.selectExamSet(3)" class="w-full bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-bold transition text-lg">SET 3</button>
+      </div>
+    </div>`;
+  }
+  
+  window.selectExamSet = function(setNum) {
+    selectedSet = setNum;
+    currentExamSet = setNum === 1 ? EXAM_SET_1 : setNum === 2 ? EXAM_SET_2 : EXAM_SET_3;
+    userAnswers = {};
+    currentSection = 0;
+    renderSection(0);
+  };
+  
+  window.showSetSelection = function() {
+    showSetSelection();
+  };
+  function renderSection(sectionIdx) {
+    const section = currentExamSet.sections[sectionIdx];
+    let html = `<div class="flex items-center justify-between mb-4">
+      <button onclick="showSetSelection()" class="text-2xl">⬅️</button>
+      <h2 class="font-bold text-lg">${currentExamSet.title}</h2>
+      <span></span>
+    </div>
+    <div class="bg-white rounded-2xl p-5 shadow-lg mb-4">
+      <h3 class="font-bold text-lg mb-4 text-center border-b-2 pb-2">${section.title}</h3>`;
+    
+    if (section.type === 'mcq') {
+      section.questions.forEach((q, i) => {
+        const qNum = (sectionIdx === 0 ? i + 1 : sectionIdx === 1 ? i + 21 : i + 36);
+        const answerId = `q-${qNum}`;
+        html += `<div class="mb-4 pb-4 border-b last:border-b-0">
+          <p class="font-bold text-sm mb-2">${qNum}. ${q.q}</p>
+          <div class="space-y-1">`;
+        q.opts.forEach((opt, j) => {
+          html += `<label class="flex items-center gap-2 cursor-pointer p-2 rounded hover:bg-blue-50">
+            <input type="radio" name="${answerId}" value="${j}" class="cursor-pointer exam-answer" data-qnum="${qNum}" data-ans="${q.ans}">
+            <span class="text-sm">${String.fromCharCode(65+j)}. ${opt}</span>
+          </label>`;
+        });
+        html += `</div><p id="fb-${qNum}" class="text-xs mt-2 hidden"></p></div>`;
+      });
+    } else if (section.type === 'correction') {
+      section.questions.forEach((q, i) => {
+        const qNum = sectionIdx === 1 ? i + 21 : i + 36;
+        html += `<div class="mb-4 pb-4 border-b last:border-b-0">
+          <p class="font-bold text-sm mb-2">${qNum}. Rewrite: "<span class="italic">${q.q}</span>"</p>
+          <input type="text" id="corr-${qNum}" class="w-full border-2 border-yellow-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-yellow-500" placeholder="Type corrected sentence...">
+          <button onclick="checkCorrection(${qNum},'${q.ans.replace(/'/g,"\\'")}')" class="mt-2 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold transition">Check</button>
+          <p id="fb-corr-${qNum}" class="text-xs mt-1 hidden"></p>
+        </div>`;
+      });
+    } else if (section.type === 'construction') {
+      section.questions.forEach((q, i) => {
+        const qNum = i + 36;
+        const scrambled = [...q.words].sort(() => Math.random() - 0.5);
+        html += `<div class="mb-4 pb-4 border-b last:border-b-0">
+          <p class="font-bold text-sm mb-2">${qNum}. Rearrange: <span class="bg-purple-100 px-2 py-1 rounded text-xs">${scrambled.join(' ')}</span></p>
+          <input type="text" id="const-${qNum}" class="w-full border-2 border-green-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-green-500" placeholder="Type sentence...">
+          <button onclick="checkConstruction(${qNum},'${q.ans.replace(/'/g,"\\'")}')" class="mt-2 bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-xs font-bold transition">Check</button>
+          <p id="fb-const-${qNum}" class="text-xs mt-1 hidden"></p>
+        </div>`;
+      });
+    }
+    
+    html += `</div>`;
+    html += `<div class="flex gap-2 justify-center">`;
+    if (sectionIdx > 0) {
+      html += `<button onclick="renderExamSection(${sectionIdx-1})" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-bold transition">⬅️ Previous</button>`;
+    }
+    if (sectionIdx < currentExamSet.sections.length - 1) {
+      html += `<button onclick="renderExamSection(${sectionIdx+1})" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-bold transition">Next ➡️</button>`;
+    } else {
+      html += `<button onclick="submitExam()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold transition">Submit ✓</button>`;
+    }
+    html += `</div>`;
+    
+    container.innerHTML = html;
+    
+    if (section.type === 'mcq') {
+      container.querySelectorAll('.exam-answer').forEach(inp => {
+        inp.addEventListener('change', (e) => {
+          const qNum = e.target.dataset.qnum;
+          const correct = parseInt(e.target.value) === parseInt(e.target.dataset.ans);
+          const fb = document.getElementById(`fb-${qNum}`);
+          if (correct) {
+            fb.textContent = '✅ Correct!';
+            fb.className = 'text-xs mt-2 text-green-600 font-bold';
+            userAnswers[qNum] = 1;
+          } else {
+            fb.textContent = '❌ Incorrect. Try again.';
+            fb.className = 'text-xs mt-2 text-red-600 font-bold';
+            userAnswers[qNum] = 0;
+          }
+          fb.classList.remove('hidden');
+        });
+      });
+    }
+  }
+  
+  window.renderExamSection = function(idx) {
+    currentSection = idx;
+    renderSection(idx);
+  };
+  
+  window.checkCorrection = function(qNum, answer) {
+    const input = document.getElementById(`corr-${qNum}`).value.trim();
+    const fb = document.getElementById(`fb-corr-${qNum}`);
+    if (input.toLowerCase() === answer.toLowerCase()) {
+      fb.textContent = '✅ Correct!';
+      fb.className = 'text-xs mt-1 text-green-600 font-bold';
+      userAnswers[qNum] = 1;
+    } else {
+      fb.textContent = `❌ Correct: "${answer}"`;
+      fb.className = 'text-xs mt-1 text-red-600 font-bold';
+      userAnswers[qNum] = 0;
+    }
+    fb.classList.remove('hidden');
+  };
+  
+  window.checkConstruction = function(qNum, answer) {
+    const input = document.getElementById(`const-${qNum}`).value.trim();
+    const fb = document.getElementById(`fb-const-${qNum}`);
+    if (input.toLowerCase() === answer.toLowerCase()) {
+      fb.textContent = '✅ Correct!';
+      fb.className = 'text-xs mt-1 text-green-600 font-bold';
+      userAnswers[qNum] = 1;
+    } else {
+      fb.textContent = `❌ Correct: "${answer}"`;
+      fb.className = 'text-xs mt-1 text-red-600 font-bold';
+      userAnswers[qNum] = 0;
+    }
+    fb.classList.remove('hidden');
+  };
+  
+  window.submitExam = function() {
+    const score = Object.values(userAnswers).filter(v => v === 1).length;
+    const total = 50;
+    const percent = Math.round((score / total) * 100);
+    const container = document.getElementById('exam-container');
+    container.innerHTML = `<div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+      <p class="text-5xl mb-4">📊</p>
+      <p class="font-bold text-xl mb-2">Examination Complete!</p>
+      <p class="text-2xl mb-2">Score: <span class="text-green-600 font-bold">${score}/50</span></p>
+      <p class="text-lg mb-4">${percent}%</p>
+      <p class="text-yellow-500 text-xl">${percent >= 70 ? '🌟 Excellent!' : percent >= 50 ? '👍 Good job!' : '💪 Keep practicing!'}</p>
+      <button onclick="showView('view-home')" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-bold transition">Return to Home</button>
+    </div>`;
+  };
+  
+  
+  showSetSelection();
+}
+
+initHome(); initPhonics(); initListening(); initSpeaking(); initReading(); initWriting(); initExam(); initAchievements(); initSettings(); initVocabulary(); lucide.createIcons();
+</script>
+ 
+</body></html>
